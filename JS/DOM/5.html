@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: #414141; color: aliceblue;">
+    <h2>amazing Images</h2>
+    <div>
+        <ul id="images">
+            <li>
+                <img width="200px" height="200px" id="photoshop" src="https://images.pexels.com/photos/10917649/pexels-photo-10917649.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load" alt="photoshop">
+            </li>
+            <li>
+                <img width="200px" height="200px" id="japan" src="https://images.pexels.com/photos/19571065/pexels-photo-19571065/free-photo-of-palm-trees-against-sky.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load">
+            </li>
+            <li>
+                <img width="200px" height="200px" id="river" src="https://images.pexels.com/photos/18489099/pexels-photo-18489099/free-photo-of-man-in-white-shirt-with-book-in-hands.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load">
+            </li>
+            <li>
+                <img width="200px" height="200px" id="owl" src="https://images.pexels.com/photos/8127035/pexels-photo-8127035.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load">
+            </li>
+            <li>
+                <img width="200px" height="200px" id="prayer" src="https://images.pexels.com/photos/18796586/pexels-photo-18796586/free-photo-of-trees.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load">
+            </li>
+            <li><a style="color: aliceblue;" href="https://google.com" id="google">Google </a></li>
+        </ul>
+    </div>
+</body>
+<script>
+    // document.getElementById('owl').onclick=function(){
+    //     alert("I am an Owl")                         //Not the best one
+    // }
+
+    // document.getElementById('owl').addEventListener('click',function(){
+    //     alert("Owl hu main!!!")
+    // })
+
+    // document.getElementById('owl').addEventListener('click',function(e){
+    //     console.log(e);
+    // },false) 
+
+    // type, timestamp, defaultPrevented
+    // target, toElement, srcElement, currentTarget
+    // clientX, clientY, screenX, screenY  
+    // altKey, ctrlKey, shiftKey, keyCode 
+    
+    // document.getElementById('images').addEventListener('click',function(e){
+    //     console.log("clicked inside the ul");
+    // },false)
+    // document.getElementById('owl').addEventListener('click',function(e){
+    //     console.log("Owl clicked");
+    //     e.stopPropagation()
+    // },false)
+
+    // // If it is false(default) then owl clicked will be printed first(Bubbling)
+    // // but if it is true then owl clicked will be printed second(Capturing)
+
+    // document.getElementById('google').addEventListener('click',function(e){
+    //     e.preventDefault()
+    //     e.stopPropagation()
+    //     console.log("goggle clicked");
+    // },false)
+
+    document.querySelector('#images').addEventListener('click',function(e){
+        // console.log(e.target.parentNode)
+        // const rem = e.target.parentNode
+        // rem.remove()
+
+        console.log(e.target.tagName);
+        if(e.target.tagName === 'IMG'){
+            console.log(e.target.id);
+            let rem = e.target.parentNode
+            rem.remove()
+        }
+    })
+</script>
+</html>
